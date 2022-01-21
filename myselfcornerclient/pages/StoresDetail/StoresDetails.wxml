@@ -1,0 +1,81 @@
+<view class="StoresInfoBox">
+  <view class="mapbox">
+     <swiper class='swiperClass' autoplay interval="4000" circular indicator-dots indicator-color="#eeeeee" indicator-active-color="#ff0094">
+      <block wx:for="{{reloopimgarr}}" wx:key="{{index}}">
+        <swiper-item>
+         <image src="{{item}}" style="width: 100%;height: 100%;" mode="widthFix" data-bid="item.bid" class="slide-image" mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="titlebox" wx:if="{{!skill}}">
+    <text class="price">￥{{storesjson.price}}</text>
+    <view class="detailbox">
+      <text class="salesnum">总库存{{storesjson.totalscore}}</text>
+      <text class="salesnum">销量{{storesjson.salesnum}}</text>
+      <text class="type">{{storesjson.btype}}</text>
+    </view>
+    <text class="name">{{storesjson.name}}</text>
+    <text class="juli">距店家{{juli}}Km</text>
+  </view>
+  <view class="titlebox_skill" wx:if="{{skill}}">
+    <text class="price">￥{{storesjson.price}}<text style="display:block;font-size:30rpx">限时秒杀中{{limittime}}</text></text>
+    <text class="name">{{storesjson.name}}</text>
+    <text class="juli">距店家{{juli}}Km</text>
+  </view>
+  <view class="choosetype">
+    <view class="itembox">
+      <text class="tips">已选</text>
+      <image src="{{checkimgurl}}"></image>
+      <text class="checkcontent">{{checkcontent}}</text>
+      <image style="float:right" src="../PayGoods/image/MO.png"></image>
+    </view>
+  </view>
+  <view class="talksbox">
+    <view class="header">
+      <text class="tips">用户评价({{talksnum}})</text>
+      <text class="more">查看更多</text>
+    </view>
+  </view>
+  <view class="businessbox" bindtap="jum_business">
+    <image src="{{businessjson.iconurl}}"></image>
+    <text class="name">{{businessjson.bname}}</text>
+    <text class="lab">“{{businessjson.blab}}”</text>
+    <text class="type">{{businessjson.btype}}</text>
+    <text class="praisetalks">综合好评{{businessjson.praisetalks}}</text>
+    <text class="badtalks" style="left: 500rpx;">综合差评{{businessjson.badtalks}}</text>
+  </view>
+</view>
+<view class="btmbar">
+  <view class="imagebox">
+    <image bindtap="jum_business" src="../images/businessicon.png"></image>
+    <image bindtap="jum_chat" src="../images/chaticon.png"></image>
+  </view>
+  <view class="ctrbar">
+    <view class="tostorescar" bindtap="tostorescar">加入购物车</view>
+    <view class="tobuystores" bindtap="tobuystores">购买商品</view>
+  </view>
+</view>
+<view class="optionbox" wx:if="{{optionshow}}">
+  <view class="optionbg"bindtap="closeoption"></view>
+  <view class="optionitembox">
+    <view class="imgshow">
+      <image src="{{checkimgurl}}"></image>
+      <text>分类剩余库存{{checkcount}}</text>
+      <view class="ctrnums">
+        <view class="add" bindtap="ctr_add">＋</view>
+        <text class="storesnum">{{storesnum}}</text>
+        <view class="sub" bindtap="ctr_sub">－</view>
+      </view>
+    </view>
+    <view class="contentitembox" wx:for="{{storesjson.itemizearr}}" wx:for-index="indexs">
+      <text class="arrname">{{item.name}}</text>
+      <view wx:for="{{item.content}}" data-idx="{{indexs}}" class="{{item.name!=contentarr[indexs] ? '':'selectbg'}} arritem" data-content="{{item.name}}" bindtap="alter_contentselect">{{item.name}}</view>
+    </view> 
+    <view class="jum_btn" wx:if="{{checkcount!=0}}" bindtap="option_jum">确认选择</view>
+    <view class="jum_btn" wx:if="{{checkcount==0}}">此分类暂时缺货哦~</view>
+  </view>
+</view>
+<view class="lodingscreen" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>

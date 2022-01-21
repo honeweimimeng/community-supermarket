@@ -1,0 +1,26 @@
+<view class="storesitembox">
+  <view wx:for="{{storesarr}}" data-idx="{{item.sid}}" class="item {{index%2==0 ? 'left' : 'right'}}" >
+    <view class="imagebox">
+    <image src="{{item.imgurl}}"></image>
+    </view>
+    <text class="name">{{item.name}}</text>
+    <view class="pricebox">
+      <text class="price">￥{{item.price}}</text>
+      <text class="salesnum">{{item.content}}</text>
+    </view>
+    <text class="btype">{{item.btype}}</text>
+    <view data-idx="{{index}}" bindtap="selected" class="selbox {{app.indexOf(selectedarr,item) ?'seledbox':''}}">√</view>
+    <view class="totalbox">
+      <view class="add" data-sid="{{item.sid}}" data-idx="{{index}}" bindtap="addtotal">＋</view>
+      <view style="display:inline-block">
+        <text style="font-size:35rpx;margin-top:0;">{{item.storesnum}}</text>
+      </view>
+      <view class="sub" data-sid="{{item.sid}}" data-idx="{{index}}" bindtap="subtotal">-</view>
+    </view>
+  </view>
+  <view class="btmbar">
+    <text>合计￥{{allmoney}}</text>
+    <view class="topay" bindtap="topay">去结算({{selectedarr.length}})</view>
+  </view>
+</view>
+<wxs src="StoresCar.wxs" module="app"/>

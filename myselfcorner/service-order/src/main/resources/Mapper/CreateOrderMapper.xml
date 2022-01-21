@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceorder.dao.CreateOrderMapper">
+    <insert id="CreateOrderBase" parameterType="string">
+        insert into orderbaseinfo values (${oid},${status},${finalpaymoney},${showpaymoney},#{uid},${bid},#{aimadress},0);
+    </insert>
+    <insert id="CreateOrderDate" parameterType="string">
+        insert into orderdate values (${oid},#{createdate},#{paydate},null,null,null);
+    </insert>
+    <insert id="CreateOrderDetail" parameterType="string">
+        insert into orderdetailinfo values (${oid},${sid},#{content},${storesnum});
+    </insert>
+    <insert id="CreateTalksInfo" parameterType="string">
+        insert into usertalks values(${bid},#{content},${sid},#{date});
+    </insert>
+</mapper>

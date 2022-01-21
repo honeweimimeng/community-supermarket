@@ -1,0 +1,82 @@
+<scroll-view>
+<view class="topnav">
+  <image src="../images/searchicon.png"></image>
+  <input bindinput="searchcontent"></input>
+  <view bindtap="jum_search">搜索</view>
+  <view class="adressbox">
+    <image src="./image/addressicon.png"></image>
+    <view>
+      <text>{{nowaddress}}</text>
+    </view>
+  </view>
+</view>
+<view class="ROMapBox">
+  <swiper class='swiperClass' autoplay indicator-color="#eeeeee" indicator-active-color="#6eaeea" indicator-dots  interval="4000" duration="1000" previous-margin="60px" next-margin="60px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+         <image src="{{item.mapurl}}" data-bid="item.bid" bindtap="jum_business" class="slide-image {{swiperIdx == index ? 'active' : 'quiet'}}" mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+  </swiper>
+</view>
+<view class="center">
+  <view data-type="衣装服饰" bindtap="searchtypeclick">
+    <image src="./image/CT.png"></image>
+    <text>衣装服饰</text>
+  </view>
+  <view data-type="母婴用品" bindtap="searchtypeclick">
+    <image src="./image/MB.png"></image>
+    <text>母婴用品</text>
+  </view>
+  <view data-type="家居生活" bindtap="searchtypeclick">
+    <image src="./image/HF.png"></image>
+    <text>家居生活</text>
+  </view>
+  <view data-type="超市百货" bindtap="searchtypeclick">
+    <image src="./image/CS.png"></image>
+    <text>超市百货</text>
+  </view>
+  <view data-type="日用杂货" bindtap="searchtypeclick">
+    <image src="./image/RY.png"></image>
+    <text>日用杂货</text>
+  </view>
+  <view data-type="饮品与茶" bindtap="searchtypeclick">
+    <image src="./image/YP.png"></image>
+    <text>饮品与茶</text>
+  </view>
+  <view data-type="医药健康" bindtap="searchtypeclick">
+    <image src="./image/YY.png"></image>
+    <text>医药健康</text>
+  </view>
+</view>
+<view class="centershow">
+   <view class="header">
+      <text class="skilltext">限时特惠秒杀</text>
+      <view class="timebox">{{limittime}}</view>
+   </view>
+   <scroll-view class="contenter" scroll-x>
+      <view class="itemer" wx:for="{{skillstores_lit}}" data-idx="{{item.sid}}" wx:if="{{skillstores_lit.length!=0}}" bindtap="jum_stores">
+        <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+        <text class="price">￥{{item.price}}</text>
+        <text class="discount">{{item.discount}}折</text>
+      </view>
+      <view wx:if="{{skillstores_lit.length==0}}" class="noitemer">暂无秒杀活动~</view>
+   </scroll-view>
+</view>
+<view class="storesitembox">
+  <view wx:for="{{storesarr}}" data-idx="{{item.sid}}" bindtap="jum_stores" class="item {{index%2==0 ? 'left' : 'right'}}" >
+    <view class="imagebox">
+    <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+    </view>
+    <text class="name">{{item.name}}</text>
+    <view class="pricebox">
+      <text class="price">￥{{item.price}}</text>
+      <text class="salesnum">{{item.salesnum}}人付款</text>
+    </view>
+    <text class="btype">{{item.btype}}</text>
+  </view>
+</view>
+</scroll-view>
+<view class="lodingscreen" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>

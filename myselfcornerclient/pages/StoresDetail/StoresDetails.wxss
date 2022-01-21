@@ -1,0 +1,391 @@
+@import '../common/commonpage/loding_remax/loding_remax.wxss';
+page{
+  width: 100%;
+  height: 100%;
+}
+.lodingscreen{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+.StoresInfoBox{
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.StoresInfoBox .mapbox{
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+  border-bottom: 1rpx solid rgb(238, 238, 238);
+}
+.StoresInfoBox .choosetype{
+  width: 95%;
+  margin: 0 auto;
+  height: auto;
+  padding: 20rpx;
+  border: 1rpx solid rgb(240, 240, 240);
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+.StoresInfoBox .choosetype .itembox{
+  width: 100%;
+  position: relative;
+  height: 60rpx;
+  overflow: hidden;
+}
+.StoresInfoBox .choosetype .itembox .tips{
+  width: 10%;
+  height: 60rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  line-height: 60rpx;
+  margin-top: 0;
+  vertical-align:top;
+}
+.StoresInfoBox .choosetype .itembox .checkcontent{
+  width: 50%;
+  overflow: hidden;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+  display: inline-block;
+  line-height: 60rpx;
+  margin-top: 0;
+  margin-left: 10rpx;
+}
+.StoresInfoBox .choosetype .itembox image{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+  margin-top: 0;
+  vertical-align:top;
+}
+.StoresInfoBox .mapbox .swiperClass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.StoresInfoBox .mapbox .slide-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, .8)
+}
+.StoresInfoBox .titlebox_skill{
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  z-index: 1001;
+}
+.StoresInfoBox .titlebox{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.StoresInfoBox .titlebox_skill .name,.StoresInfoBox .titlebox .name{
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 35rpx;
+  font-weight: 600;
+  color: rgb(37, 37, 37);
+  margin-top: 10rpx;
+}
+.StoresInfoBox .titlebox_skill .juli,.StoresInfoBox .titlebox .juli{
+  padding: 10rpx;
+  background-color: tomato;
+  font-size: 30rpx;
+  color: white;
+  margin-top: 10rpx;
+  margin-left: 5%;
+  border-radius: 10rpx;
+  display: block;
+  width: 230rpx;
+  text-align: center;
+}
+.StoresInfoBox .titlebox_skill .price,.StoresInfoBox .titlebox .price{
+  padding: 10rpx;
+  font-size: 40rpx;
+  color: tomato;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  border-radius: 10rpx;
+  display: inline-block;
+  width: 200rpx;
+}
+.StoresInfoBox .titlebox_skill .detailbox,.StoresInfoBox .titlebox .detailbox{
+  width: 400rpx;
+  float: right;
+  padding: 10rpx;
+  margin-top: 20rpx;
+  position: relative;
+  text-align: right;
+}
+.salesnum{
+  font-size: 30rpx;
+  color: rgb(124, 124, 124);
+  margin-left: 10rpx;
+}
+.type{
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  background-color: #6495ED;
+  color: white;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  padding: 5rpx;
+  color: white;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.businessbox{
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid rgb(240, 240, 240);
+  position: relative;
+  margin-bottom: 150rpx;
+}
+.businessbox image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid rgb(204, 204, 204);
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.businessbox .lab{
+  display: block;
+  font-size: 30rpx;
+  color: rgb(107, 107, 107);
+  margin-left: 20rpx;
+  overflow: hidden;
+}
+.businessbox .name{
+  position: absolute;
+  top: 20rpx;
+  left: 160rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+}
+.businessbox .type{
+  position: absolute;
+  height: 40rpx;
+  top: 80rpx;
+  left: 140rpx;
+}
+.badtalks,.praisetalks{
+  position: absolute;
+  top: 80rpx;
+  left: 300rpx;
+  font-size: 35rpx;
+  color: rgb(104, 104, 104);
+}
+.talksbox{
+  width: 100%;
+  height: auto;
+  border-bottom: 1rpx solid rgb(240, 240, 240);
+  position: relative;
+}
+.talksbox .header{
+  width: 95%;
+  margin: 0 auto;
+  height: 50rpx;
+  overflow: hidden;
+}
+.talksbox .header .more{
+  position: absolute;
+  right: 20rpx;
+  font-size: 30rpx;
+  color: #6495ED;
+  top: 5rpx;
+}
+.talksbox .header .tips{
+  font-size: 35rpx;
+  font-weight: 700;
+}
+.btmbar{
+  width: 90%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 30rpx;
+  background-color: #3e68b8;
+  margin: 0 auto;
+  border-radius: 30px;
+  left: 5%;
+  overflow: hidden;
+}
+.btmbar .ctrbar{
+  position: relative;
+  width: 400rpx;
+  float: right;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.btmbar .ctrbar .tostorescar{
+  width: 200rpx;
+  background-color: tomato;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  display: inline-block;
+}
+.btmbar .ctrbar .tobuystores{
+  width: 200rpx;
+  background-color: rgb(223, 185, 80);
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  display: inline-block;
+}
+.btmbar .imagebox{
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+  width: 250rpx;
+  height: 100%;
+}
+.btmbar .imagebox image{
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.optionbox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0,0.6);
+  animation: fadeTopIn 0.3s;
+}
+.optionbox .optionitembox{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: 1001;
+  background-color: rgb(245, 245, 245);
+  
+}
+.optionbox .optionitembox .jum_btn{
+  width: 90%;
+  height: 80rpx;
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  margin: 20rpx auto;
+  border-radius: 30px;
+}
+.optionbox .optionitembox .contentitembox{
+  width: 90%;
+  margin: 20rpx auto;
+  height: auto;
+}
+.optionbox .optionitembox .contentitembox .arrname{
+  font-size: 35rpx;
+  font-weight: 600;
+  display: block;
+}
+.selectbg{
+  background-color: #6495ED;
+  color: white;
+}
+.optionbox .optionitembox .contentitembox .arritem{
+  width: auto;
+  padding: 10rpx;
+  border: 1rpx solid white;
+  border-radius: 15rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  margin: 10rpx 20rpx 10rpx 0;
+}
+.optionbox .optionitembox .imgshow{
+  width: 100%;
+  height: 150rpx;
+}
+.optionbox .optionitembox .imgshow image{
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  top: 25rpx;
+  left: 20rpx;
+}
+.optionbox .optionitembox .imgshow text{
+  font-size: 30rpx;
+  color: rgb(77, 77, 77);
+  margin-left: 35rpx;
+}
+.optionbox .optionbg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+.optionbox .optionitembox .imgshow .ctrnums{
+  width: 200rpx;
+  height: 50rpx;
+  display: inline-block;
+  margin-left: 50rpx;
+}
+.optionbox .optionitembox .imgshow .ctrnums .add{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  display: inline-block;
+  font-size: 40rpx;
+  background-color: #6495ED;
+}
+.optionbox .optionitembox .imgshow .ctrnums .sub{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  display: inline-block;
+  background-color: rgb(133, 133, 133);
+  font-size: 40rpx;
+}
+.optionbox .optionitembox .imgshow .ctrnums .storesnum{
+  width: 80rpx;
+  height: 50rpx;
+  display: inline-block;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 0;
+  font-size: 35rpx;
+}
+@keyframes fadeTopIn{
+  0% {
+    transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}

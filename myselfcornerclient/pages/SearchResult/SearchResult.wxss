@@ -1,0 +1,130 @@
+page{
+  background-color: rgb(245, 245, 245);
+}
+.topnav{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  position: relative;
+}
+.topnav input{
+  width: 90%;
+  height: 50rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #6495ED;
+  position: absolute;
+  top: 15rpx;
+  font-size: 25rpx;
+  background: white;
+  position: relative;
+  left: 2%;
+}
+.topnav view{
+  background: #6495ED;
+  border-radius: 30rpx;
+  width: 160rpx;
+  height: 55rpx;
+  position: absolute;
+  right: 2.5%;
+  top: 15rpx;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  z-index: 1001;
+}
+.topnav image{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 23rpx;
+  left: 4%;
+  z-index: 100;
+}
+.horzbox{
+  width: 95%;
+  height: 130rpx;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+}
+.horzbox .typeshow{
+  width: 20%;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+}
+.sel{
+  border-bottom: 1rpx solid #6495ED;color: #6495ED;
+}
+.storesitembox{
+  width: 95%;
+  height: auto;
+  position: relative;
+  left: 2.5%;
+  margin: 20rpx 0;
+  border-radius: 15rpx;
+}
+.storesitembox .item{
+  width: 48%;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  border: 1rpx solid rgb(237, 237, 237);
+  padding-bottom: 20rpx;
+  border-radius: 5rpx;
+}
+.storesitembox .left{
+  float: left;
+}
+.storesitembox .right{
+  margin-left: 2%;
+}
+.storesitembox .item .imagebox{
+  width: 100%;
+  display: block;
+  height: 250rpx;
+  overflow: hidden;
+}
+.storesitembox .item .imagebox image{
+  max-width: 100%;  
+  max-height: 100%;
+}
+.storesitembox .item .name{
+  font-size: 35rpx;
+  color: rgb(87, 87, 87);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  margin: 0 auto;
+  font-weight: 700;
+}
+.storesitembox .item .pricebox{
+  width: 95%;
+  margin: 0 auto;
+  height: 60rpx;
+}
+.storesitembox .item .pricebox .price{
+  font-size: 40rpx;
+  color: tomato;
+}
+.storesitembox .item .pricebox .salesnum{
+  font-size: 30rpx;
+  color: rgb(163, 163, 163);
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.storesitembox .item .btype{
+  padding: 2rpx;
+  height: auto;
+  background-color:  tomato;
+  font-size: 25rpx;
+  padding: 5rpx;
+  color: white;
+  margin-left: 5%;
+  border-radius: 10rpx;
+}

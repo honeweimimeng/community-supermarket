@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceuser.dao.AlterUserInfoMapper">
+    <delete id="DeleteApplyBusiness" parameterType="string">
+        delete from applybusiness where uid=#{uid};
+    </delete>
+    <update id="AlterBusinessStatus" parameterType="string">
+        update businessdetails set status=if(status=1,0,1) where bid=${bid};
+    </update>
+    <update id="BusinessGTalks" parameterType="string">
+        update businessdetails set praisetalks=praisetalks+1;
+    </update>
+    <update id="BusinessBTalks" parameterType="string">
+        update businessdetails set badtalks=badtalks+1;
+    </update>
+    <update id="Adduserbrowse" parameterType="string">
+        update userbrowse set clicknum=clicknum+1 where uid=#{uid} and sid=${sid};
+    </update>
+</mapper>

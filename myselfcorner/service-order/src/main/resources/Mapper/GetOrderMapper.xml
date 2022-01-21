@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceorder.dao.GetOrderMapper">
+    <select id="GetOrderArr" parameterType="string" resultType="com.hone.serviceorder.model.OrderInfo">
+        select * from orderbaseinfo ob join orderdate od on ob.oid=od.oid join orderdetailinfo oe on ob.oid=oe.oid where
+        <if test='status != ""'>
+           status=${status} and
+        </if>
+        <if test='utype == "1"'>
+           uid=#{uid}
+        </if>
+        <if test='utype == "0"'>
+           bid=${uid}
+        </if>
+    </select>
+    <select id="SingleStores" parameterType="string" resultType="com.hone.serviceorder.model.StoresInfo">
+        select * from storesbaseinfo sb left join joinseckill jk on jk.sid=sb.sid join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid
+        where sb.sid=${sid};
+    </select>
+    <select id="GetSingleSeckill" parameterType="string" resultType="com.hone.serviceorder.model.SeckillInfo">
+        select * from joinseckill where sid=${sid};
+    </select>
+    <select id="GetNotReadOrder" parameterType="string" resultType="com.hone.serviceorder.model.OrderInfo">
+        select * from orderbaseinfo ob join orderdate od on ob.oid=od.oid join orderdetailinfo oe on ob.oid=oe.oid where ob.bid=${bid} and ob.breadstatus=0 or status=1;
+    </select>
+</mapper>

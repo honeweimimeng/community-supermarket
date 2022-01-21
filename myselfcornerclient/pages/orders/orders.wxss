@@ -1,0 +1,248 @@
+.tapNav {
+  display: flex;
+  flex-direction: row;
+ }
+ .tapNav view{
+  flex:1;
+  width:200rpx;
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  color: rgb(122, 122, 122);
+ }
+ .tapNav .active {
+  color:#6495ED;
+  border-bottom:5rpx solid #6495ED;
+  color: black;
+  font-weight: 700;
+ }
+ .content{
+   width: 100%;
+   position: absolute;
+   margin-top: 105rpx;
+   top: 0;
+   left: 0;
+   bottom: 0;
+ }
+ #swiper{
+   width: 100%;
+   height: 100%;
+ }
+.contentitembox{
+  position: fixed;
+  width: 100%;
+  top: 0rpx;
+  height: calc(100% - 80rpx);
+  position: relative;
+}
+.contentitembox .item_1{
+  width: 100%;
+  height: 250rpx;
+  background-color: white;
+  border-bottom: 1rpx solid rgb(218, 218, 218);
+  position: relative;
+}
+.contentitembox .item_2{
+  width: 100%;
+  height: 250rpx;
+  background-color: rgb(219, 219, 219);
+  border-bottom: 1rpx solid rgb(218, 218, 218);
+  position: relative;
+}
+.contentitembox .item_1 .name,.contentitembox .item_2 .name{
+  position: absolute;
+  font-weight: 700;
+  font-size: 40rpx;
+  top: 10rpx;
+  left: 150rpx;
+  color: rgb(94, 94, 94);
+  display: block;
+  width: 60%;
+  height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contentitembox .item_1 image,.contentitembox .item_2 image{
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  height: 130rpx;
+  width: 130rpx;
+}
+.contentitembox .item_1 .show_price,.contentitembox .item_2 .show_price{
+  position: absolute;
+  width: auto;
+  height: auto;
+  font-size: 35rpx;
+  border-radius: 5rpx;
+  color: rgb(134, 26, 26);
+  font-weight: 600;
+  top: 90rpx;
+  left: 300rpx;
+}
+.contentitembox .item_1 .price,.contentitembox .item_2 .price{
+  position: absolute;
+  width: auto;
+  height: auto;
+  font-size: 35rpx;
+  border-radius: 5rpx;
+  color: rgb(124, 124, 124);
+  top: 90rpx;
+  left: 150rpx;
+}
+.textline{
+  text-decoration:line-through;
+}
+.contentitembox .item_1 .checkurl,.contentitembox .item_2 .checkurl{
+  position: absolute;
+  top: 190rpx;
+  left: 150rpx;
+  height: 40rpx;
+  width: auto;
+  color: white;
+  background-color: tomato;
+  font-size: 35rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+  padding: 5rpx;
+}
+.contentitembox .item_1 .adress,.contentitembox .item_2 .adress{
+  position: absolute;
+  top: 130rpx;
+  left: 150rpx;
+  width: auto;
+  height: auto;
+  padding: 10rpx;
+  font-size: 35rpx;
+}
+.talksshow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgb(247, 247, 247);
+  z-index: 1003;
+  animation: downin 1s;
+}
+@keyframes downin {
+  0% {
+    transform: translate3d(0, 40%, 0);
+    transform: translate3d(0, 40%, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.talksshow .header{
+  width: 100%;
+  height: 80rpx;
+  background: white;
+  position: relative;
+  top: 0;
+  border-bottom: 1rpx solid rgb(240, 240, 240);
+}
+.talksshow .header image{
+  position: relative;
+  left: 0;
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+}
+.talksshow .header text{
+  display: inline-block;
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  position: relative;
+  top: -12rpx;
+  color: rgb(70, 70, 70);
+}
+.talksshow .header view{
+  width: 150rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  margin-top: 15rpx;
+  background-color: tomato;
+  font-size: 35rpx;
+  color: white;
+  text-align: center;
+  line-height: 50rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+  position: relative;
+  float: right;
+}
+.talksshow .bodyer{
+  width: 90%;
+  margin: 0 auto;
+  height: 500rpx;
+  background: white;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  border: 1rpx solid rgb(240, 240, 240);
+  padding: 20rpx;
+  font-size: 35rpx;
+  color: rgb(71, 71, 71);
+}
+.talksshow .talkstypebox{
+  width: 95%;
+  margin: 20rpx 2.5%;
+  height: 70rpx;
+  background: white;
+  border: 1rpx solid rgb(240, 240, 240);
+}
+.talksshow .talkstypebox view{
+  height: 50rpx;
+  margin: 10rpx 20rpx;
+  border: 1rpx solid rgb(240, 240, 240);
+  color: rgb(82, 82, 82);
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
+  display: inline-block;
+  width: 100rpx;
+  border-radius: 10rpx;
+}
+.imagebox{
+  width: 100%;
+  position: relative;
+  top: 20rpx;
+  height: auto;
+}
+.imagebox image{
+  display: block;
+  margin: 0 auto;
+}
+.iteamer{
+  width: 95%;
+  height: 100rpx;
+  margin: 20rpx 2.5%;
+  position: relative;
+}
+.iteamer text{
+  display: block;
+  font-size: 35rpx;
+  margin: 20rpx 0;
+}
+.iteamer .uploadimgaebox{
+  width: 100%;
+  height: 200rpx;
+  border: 1rpx dotted rgb(194, 194, 194);
+  margin-bottom: 20rpx;
+}
+.iteamer .uploadimgaebox image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 25rpx;
+}
+.sel{
+  background: #6495ED;
+  color: white;
+}

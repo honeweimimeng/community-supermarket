@@ -1,0 +1,12 @@
+<view class="content">
+  <view class="sendbox" wx:if="{{!isapply}}">
+    <input placeholder="展位名称" class="name" bindinput="name_input"></input>
+    <input placeholder="申请理由" class="lab" bindinput="blab_input"></input>
+    <view class="uploadimgaebox" bindtap="chooseimg">
+      <text>上传宣传画</text>
+      <image src="{{uploadurl}}"></image>
+    </view>
+    <view class="sendreq" bindtap="sendreq">提交申请(每个店铺仅可同时提交一次)</view>
+    <text style="font-size:35rpx">Tips:申请通过后获得12小时宣传权</text>
+  </view>
+</view>

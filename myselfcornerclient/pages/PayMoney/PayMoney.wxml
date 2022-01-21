@@ -1,0 +1,31 @@
+<view class="lodingscreen" wx:if="{{isloding}}">
+  <text class="jum_wxpay">{{paystatus}}</text>
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>
+<view class="adressselectbox" wx:if="{{selectadress}}">
+  <view wx:for="{{adressarr}}" class="adressitem">
+    <view class="contentbox">
+      <text class="name">{{item.name}}</text>
+      <text class="phonenumber">{{item.phonenumber}}</text>
+      <text class="adress">{{item.adress}}</text>
+    </view>
+    <view class="ctrbox">
+      <view class="selectnow {{nowseleadress.name==item.name && nowseleadress.adress==item.adress && nowseleadress.phonenumber==item.phonenumber ? 'adresssel' : ''}}" data-json="{{item}}" bindtap="selectadress">√</view>
+      <text class="delete" data-json="{{item}}" bindtap="deleteadress">删除</text>
+    </view>
+  </view>
+  <view wx:if="{{additem}}" class="adressitem" style="height:300rpx">
+    <input placeholder="收件人" bindinput="name_input"></input>
+    <input placeholder="手机号" bindinput="phone_input"></input>
+    <input placeholder="收件地址" bindinput="adress_input"></input>
+    <view class="addernew" bindtap="req_newadress">确认添加</view>
+  </view>
+  <view class="addbtn" bindtap="additem">
+    <view class="addicon">＋</view>
+    <text>添加新地址</text>
+  </view>
+  <view class="addbtn" bindtap="req_createorder" style="background-color: tomato;">
+    <text>确认支付</text>
+  </view>
+</view>
+<view style="display: block;text-align: center;margin-top: 20%;" wx:if="{{!selectadress}}">支付成功~订单已生成</view>

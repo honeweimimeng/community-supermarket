@@ -1,0 +1,27 @@
+<view class="topnav">
+  <image src="../images/searchicon.png"></image>
+  <input bindinput="searchcontent" value="{{searchcontent}}"></input>
+  <view bindtap="jum_search">搜索</view>
+</view>
+<view class="horzbox">
+  <text style="display:block;height:50rpx;line-height: 50rpx;border-bottom: 1rpx solid #6495ED;color: #6495ED;font-size:30rpx;width: 20%;text-align:center">{{searchtype}}</text>
+  <text class="typeshow {{nowsel=='saleup' ? 'sel':''}}" data-ctn="saleup" bindtap="changesel">销量升序</text>
+  <text class="typeshow {{nowsel=='saledown' ? 'sel':''}}" data-ctn="saledown" bindtap="changesel">销量降序</text>
+  <text class="typeshow {{nowsel=='priceup' ? 'sel':''}}" data-ctn="priceup" bindtap="changesel">价格升序</text>
+  <text class="typeshow {{nowsel=='pricedown' ? 'sel':''}}" data-ctn="pricedown" bindtap="changesel">价格降序</text>
+</view>
+<scroll-view scroll-y>
+  <view class="storesitembox">
+  <view wx:for="{{storesarr}}" data-idx="{{item.sid}}" bindtap="jum_stores" class="item {{index%2==0 ? 'left' : 'right'}}" >
+    <view class="imagebox">
+    <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+    </view>
+    <text class="name">{{item.name}}</text>
+    <view class="pricebox">
+      <text class="price">￥{{item.price}}</text>
+      <text class="salesnum">{{item.salesnum}}人付款</text>
+    </view>
+    <text class="btype">{{item.btype}}</text>
+  </view>
+  </view>
+</scroll-view>

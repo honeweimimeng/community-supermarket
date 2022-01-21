@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicestores.dao.AlterStoresMapper">
+    <update id="AlterStoresTotal" parameterType="string">
+        update storesitemize set content=#{content} where sid=${sid};
+    </update>
+    <update id="AlterStoresDetailsTotal" parameterType="string">
+        update storesdetails set totalscore=${total} where sid=${sid};
+    </update>
+    <delete id="DeleteStores_baseinfo" parameterType="string">
+        delete from storesbaseinfo where sid=${sid};
+    </delete>
+    <delete id="DeleteStores_details" parameterType="string">
+        delete from storesdetails where sid=${sid};
+    </delete>
+    <delete id="DeleteStores_itemze" parameterType="string">
+        delete from storesitemize where sid=${sid};
+    </delete>
+    <delete id="DeleteRoMap" parameterType="string">
+        delete from recommendmap where bid=${bid};
+    </delete>
+    <update id="AlterRoMapStatus" parameterType="string">
+        update recommendmap set status=1,enddate=#{endtime}  where bid=${bid};
+    </update>
+    <update id="AlterStoresCarNum" parameterType="string">
+        update storescar
+        <if test='altertype == "1"'>
+            set storesnum=IF(1>storesnum, 0, storesnum -${storesnum})
+        </if>
+        <if test='altertype == "0"'>
+            set storesnum=storesnum+${storesnum}
+        </if>
+        where uid=#{uid} and sid=${sid};
+    </update>
+    <delete id="RemoveStoresCar" parameterType="string">
+        delete from storescar where uid=#{uid} and sid=${sid};
+    </delete>
+</mapper>

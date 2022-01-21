@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceorder.dao.AdressMapper">
+    <select id="GetAdress" parameterType="string" resultType="com.hone.serviceorder.model.Adress">
+        select * from adress where uid=#{uid}
+        <if test="name!=null">
+            and name=#{name}
+        </if>
+        <if test="adress!=null">
+            and adress=#{adress}
+        </if>
+    </select>
+    <insert id="CreateAdress" parameterType="string">
+        insert into adress values(#{uid},#{adress},#{phonenumber},#{name});
+    </insert>
+    <delete id="DeleteAdress" parameterType="string">
+        delete from adress where uid=#{uid};
+    </delete>
+</mapper>

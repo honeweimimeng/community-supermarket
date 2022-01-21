@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicestores.dao.CreateStoresMapper">
+    <insert id="CreateStoresBaseInfo" parameterType="string">
+        insert into storesbaseinfo values(${sid},${bid},#{name},#{btype},${price},#{details},#{createdate},null);
+    </insert>
+    <insert id="CreateStoresDetails" parameterType="string">
+        insert into storesdetails (sid,itemizearr) values (${sid},#{itemizearr});
+    </insert>
+    <insert id="CreateStoresItemize" parameterType="string">
+        insert into storesitemize (sid,content) values(${sid},#{content});
+    </insert>
+    <insert id="JoinSeckill" parameterType="string">
+        insert into joinseckill values(${sid},#{starttime},${discount},${bid});
+    </insert>
+    <insert id="CreateRoMap" parameterType="string">
+        insert into recommendmap (bid,mapurl,lab,startdate,enddate) values(${bid},#{mapurl},#{lab},#{startdate},#{enddate});
+    </insert>
+    <insert id="CreateStoresCar" parameterType="string">
+        insert into storescar values (#{uid},${sid},#{date},#{storesnum},#{content});
+    </insert>
+</mapper>

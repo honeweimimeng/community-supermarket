@@ -1,0 +1,160 @@
+@import '../common/commonpage/loding_remax/loding_remax.wxss';
+page{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(245, 245, 245);
+}
+.infobox{
+  width: 90%;
+  height: 250rpx;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  top: 20rpx;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgb(241, 241, 241);
+}
+.infobox .bicon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  position: relative;
+  border: 1rpx solid rgb(245, 245, 245);
+  background-color: rgb(245, 245, 245);
+  display: block;
+}
+.infobox .bname{
+  font-size: 35rpx;
+  font-weight: 700;
+  color: rgb(78, 78, 78);
+  display: block;
+  width: 160rpx;
+  height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: absolute;
+  left: 200rpx;
+  top: 20rpx;
+}
+.infobox .blab{
+  font-size: 30rpx;
+  color: rgb(133, 133, 133);
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.infobox .detailbox{
+  width: 65%;
+  position: absolute;
+  top: 80rpx;
+  left: 200rpx;
+  height: 80rpx;
+}
+.infobox .detailbox .detailitem{
+  height: 100%;
+  width: 18%;
+  margin-right: 2%;
+  display: inline-block;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 0;
+  overflow: hidden;
+  color: rgb(114, 114, 114);
+}
+.infobox .adress{
+  display: block;
+  color: white;
+  width: 400rpx;
+  height: 40rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  background-color: #6495ED;
+  margin-top: 10rpx;
+}
+.orderinfobox{
+  width: 90%;
+  height: 100rpx;
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  top: 20rpx;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  margin-top: 30rpx;
+  border: 1rpx solid rgb(238, 238, 238);
+}
+.orderinfobox .orderitemer{
+  width: 18%;
+  margin-right: 2%;
+  height: 95%;
+  position: relative;
+  display: inline-block;
+  top: 5%;
+  margin-top: 0;
+  overflow: hidden;
+}
+.orderinfobox .orderitemer image{
+  height: 60rpx;
+  width: 60rpx;
+  margin: 0 auto;
+  display: block;
+}
+.orderinfobox .orderitemer text{
+  font-size: 25rpx;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin-top: 5rpx;
+}
+.jum_seckill{
+  width: 90%;
+  height: 50rpx;
+  background-color: white;
+  margin: 30rpx auto 0 auto;
+  position: relative;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgb(241, 241, 241);
+}
+.jum_seckill text,.ctrinline text{
+  width: 200rpx;
+  height: 100%;
+  color: rgb(94, 94, 94);
+  font-size: 35rpx;
+  position: relative;
+}
+.jum_seckill image,.ctrinline image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  margin-top: 5rpx;
+}
+.ctrinline{
+  width: 90%;
+  height: 50rpx;
+  background-color: white;
+  margin: 10rpx auto 0 auto;
+  position: relative;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgb(241, 241, 241);
+}
+.lodingboxer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 1111;
+}

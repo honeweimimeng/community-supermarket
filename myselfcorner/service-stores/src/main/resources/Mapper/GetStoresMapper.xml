@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicestores.dao.GetStoresMapper">
+    <select id="GetSingleStoresForName" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo where name=#{name} and price=#{price};
+    </select>
+    <select id="GetStoresSortFieldArr_Limit" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo si join storesdetails sd on si.sid=sd.sid join storesitemize sz on si.sid=sz.sid
+        where si.bid=${bid}
+        <if test="searchcontent != ''">
+            and si.name like CONCAT('%',#{searchcontent},'%')
+        </if>
+        order by
+        <if test="field == 'date'">
+            si.id
+        </if>
+        <if test="field == 'total'">
+            sd.totalscore
+        </if>
+        <if test="field == 'sales'">
+            sd.salesnum
+        </if>
+        <if test="Sort == 'up'">
+            asc
+        </if>
+        <if test="Sort == 'down'">
+            desc
+        </if>
+    </select>
+    <select id="GetSingleItemize" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesitemize where sid=${sid};
+    </select>
+    <select id="GetJoinSeckill" parameterType="string" resultType="com.hone.servicestores.model.SeckillInfo">
+        select * from joinseckill where bid=${bid} and starttime=#{date};
+    </select>
+    <select id="GetRowMap" parameterType="string" resultType="com.hone.servicestores.model.RecommendMap">
+        select rm.*,bi.bname from recommendmap rm join businessinfo bi on rm.bid=bi.bid
+        <if test='bid != null'>
+            where rm.bid=${bid}
+        </if>
+    </select>
+    <select id="GetRoMapForsingle" parameterType="string" resultType="com.hone.servicestores.model.RecommendMap">
+        select rm.*,bi.bname from recommendmap rm join businessinfo bi on rm.bid=bi.bid;
+    </select>
+    <select id="GetUserBrowse" parameterType="string" resultType="com.hone.localcommons.Model.UserBrowse">
+        select * from userbrowse ub join storesbaseinfo sb on ub.sid=sb.sid where uid=#{uid};
+    </select>
+    <select id="GetUserStoresCar" parameterType="string" resultType="com.hone.localcommons.Model.StoresCar">
+        select * from storescar sc join storesbaseinfo sb on sc.sid=sb.sid where uid=#{uid};
+    </select>
+    <select id="GetSkillStoresLimitTime" parameterType="string" resultType="com.hone.servicestores.model.SeckillInfo">
+        select * from joinseckill jk join storesbaseinfo sb on jk.sid=sb.sid join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid
+        where jk.starttime=#{start}
+    </select>
+    <select id="GetSkillStores" parameterType="string" resultType="com.hone.servicestores.model.SeckillInfo">
+        select * from storesbaseinfo sb left join joinseckill jk on jk.sid=sb.sid join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid
+        where sb.sid=${sid};
+    </select>
+    <select id="GetStoresCar" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storescar where uid=#{uid} and sid=${sid};
+    </select>
+    <select id="GetSearchStores_Up" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo sb join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid where 1=1
+        <if test='content!="null"'>
+            and sb.name like CONCAT('%',#{content},'%')
+        </if>
+        <if test='type!="null"'>
+            and sb.btype=#{type}
+        </if>
+        order by ${seltype} asc;
+    </select>
+    <select id="GetSearchStores_Down" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo sb join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid where 1=1
+        <if test='content!="null"'>
+            and sb.name like CONCAT('%',#{content},'%')
+        </if>
+        <if test='type!="null"'>
+            and sb.btype=#{type}
+        </if>
+        order by ${seltype} desc;
+    </select>
+    <select id="GetStoresSIngleByType" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo sb left join joinseckill jk on jk.sid=sb.sid join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid
+        where sb.btype=${type};
+    </select>
+    <select id="GetStoresNewLimitArr" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo sb left join joinseckill jk on jk.sid=sb.sid join storesdetails sd on sb.sid=sd.sid join storesitemize si on sb.sid=si.sid join businessinfo bi on sb.bid=bi.bid
+        limit 0,${end};
+    </select>
+    <select id="GetSingleStoresAll" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo si join storesdetails sd on si.sid=sd.sid join storesitemize sz on si.sid=sz.sid
+        where si.bid=${bid}
+        <if test="searchcontent != ''">
+            and si.name like CONCAT('%',#{searchcontent},'%')
+        </if>
+        <if test="field==0">
+            and sd.totalscore>0
+        </if>
+        <if test="field==1">
+            order by si.id desc
+        </if>
+        <if test="field==2">
+            order by si.price desc
+        </if>
+        <if test="field==3">
+            order by sd.salesnum desc
+        </if>
+    </select>
+    <select id="SingleStores" parameterType="string" resultType="com.hone.servicestores.model.StoresInfo">
+        select * from storesbaseinfo si join storesdetails sd on si.sid=sd.sid join storesitemize sz on si.sid=sz.sid
+        where si.sid=${sid};
+    </select>
+</mapper>

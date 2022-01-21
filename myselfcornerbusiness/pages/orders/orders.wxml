@@ -1,0 +1,27 @@
+<view class="tapNav">
+ <view class="{{contentindex==0?'active':''}}" data-index="0" bindtap="ClickHandle">待付款</view>
+ <view class="{{contentindex==1?'active':''}}" data-index="1" bindtap="ClickHandle">待发货</view>
+ <view class="{{contentindex==2?'active':''}}" data-index="2" bindtap="ClickHandle">待收货</view>
+ <view class="{{contentindex==3?'active':''}}" data-index="3" bindtap="ClickHandle">已完成</view>
+ <view class="{{contentindex==4?'active':''}}" data-index="4" bindtap="ClickHandle">全部订单</view>
+</view>
+<view class="content">
+<swiper id="swiper" current="{{contentindex}}" bindchange="swiperChange">
+  <block wx:for="{{looparr}}" wx:key="*this">
+    <swiper-item>
+      <scroll-view scroll-y class="contentitembox" bindscrolltolower="nextpage">
+        <view wx:for="{{orderarr}}" wx:key="index" class="{{index%2==0 ? 'item_1' : 'item_2'}}">
+          <image src="{{item.imgurl}}"></image>
+          <text class="name">{{item.page}}</text>
+          <text class="show_price">￥{{filters.toFix(item.finalpaymoney)}}</text>
+          <text class="price {{item.finalpaymoney ==null ? '':'textline'}}">￥{{filters.toFix(item.showpaymoney)}}</text>
+          <text class="adress">{{item.aimadress}}</text>
+          <text class="price" style="left:450rpx">购买数量{{item.storesnum}}</text>
+          <view class="checkurl" wx:if="{{item.status=='1'}}" data-oid="{{item.oid}}" data-idx="{{index}}" bindtap="checkurl">发货</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<wxs module="filters" src="./order.wxs"></wxs>

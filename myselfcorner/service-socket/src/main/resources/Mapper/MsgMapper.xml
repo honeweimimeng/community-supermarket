@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicesocket.dao.MsgMapper">
+    <select id="GetChatList_Customer" parameterType="string" resultType="com.hone.servicesocket.model.ChatMessage">
+        select aimuid,uid,content,type,date,aimuid,utype,iconurl,bname from message ms left join businessinfo bs on ms.aimuid=bs.bid where ms.uid=#{uid} group by ms.aimuid;
+    </select>
+    <select id="GetChatList_Business" parameterType="string" resultType="com.hone.servicesocket.model.ChatMessage">
+        select aimuid,uid,content,type,date,aimuid,utype from message where aimuid=#{uid} group by uid;
+    </select>
+    <select id="GetChatListForUser" parameterType="string" resultType="com.hone.servicesocket.model.ChatMessage">
+        select * from message me
+        <if test='utype == "1" or utype == 1'>
+            join businessinfo bi on me.aimuid=bi.bid where me.uid=#{uid} and me.aimuid=#{aimuid}
+        </if>
+        <if test='utype == "0" or utype == 0'>
+            where me.aimuid=#{uid} and me.uid=#{aimuid}
+        </if>
+    </select>
+    <insert id="CreateNewChat" parameterType="string">
+        insert into message values(#{uid},#{content},${type},#{date},#{aimuid},${utype});
+    </insert>
+</mapper>

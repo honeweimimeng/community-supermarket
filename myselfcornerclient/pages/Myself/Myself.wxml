@@ -1,0 +1,34 @@
+<view class="infobox" style="background:{{businessinfojson.iconurl}}">
+  <open-data type="userAvatarUrl" class="bicon"></open-data>
+  <open-data class="bname" type="userNickName" lang="zh_CN"></open-data>
+  <text class="adress">{{adress}}</text>
+</view>
+<view class="orderinfobox">
+  <view class="orderitemer" data-content="paying" bindtap="jum_torder">
+    <image src="./images/paying.png"></image>
+    <text>待付款</text>
+  </view>
+  <view class="orderitemer" data-content="sending" bindtap="jum_torder">
+    <image src="./images/sending.png"></image>
+    <text>待发货</text>
+  </view>
+  <view class="orderitemer" data-content="sended" bindtap="jum_torder">
+    <image src="./images/sended.png"></image>
+    <text>已发货</text>
+  </view>
+  <view class="orderitemer" data-content="checking" bindtap="jum_torder">
+    <image src="./images/checking.png"></image>
+    <text>已完成</text>
+  </view>
+  <view class="orderitemer" data-content="allorder" bindtap="jum_torder">
+    <image src="./images/allorder.png"></image>
+    <text>全部订单</text>
+  </view>
+</view>
+<view class="ctrinline" bindtap="jum_messagepage">
+  <text>通知消息<text style="color:red">({{notreadmsgnum}})</text></text>
+  <image src="../images/messgae.png"></image>
+</view>
+<view class="lodingboxer" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>

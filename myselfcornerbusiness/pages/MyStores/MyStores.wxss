@@ -1,0 +1,373 @@
+@import '../common/commonpage/loding_remax/loding_remax.wxss';
+page{
+  width: 100%;
+  height: 100%;
+}
+.searchbox{
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+}
+.searchbox .inputbox{
+  width: 50%;
+  height: 60%;
+  position: absolute;
+  top: 10%;
+  right: 2%;
+}
+.searchbox .inputbox input{
+  width: 100%;
+  height: 100%;
+  border: 1rpx solid rgb(228, 228, 228);
+  border-radius: 30px;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 25rpx;
+  color: rgb(151, 151, 151);
+}
+.searchbox .inputbox view{
+  width: 100rpx;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #6495ED;
+  border: 1rpx solid #6495ED;
+  text-align: center;
+  color: white;
+  line-height: 50rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30rpx;
+  z-index: 1001;
+}
+.searchbox .sortopbox{
+  height: 60%;
+  width: 20%;
+  position: absolute;
+  margin-left: 2%;
+  top: 10%;
+  border-radius: 10rpx;
+  background-color: rgb(245, 245, 245);
+  border: 1rpx solid rgb(228, 228, 228);
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: rgb(124, 124, 124);
+}
+.searchbox .filedopbox{
+  height: 60%;
+  width: 20%;
+  position: absolute;
+  left: 25%;
+  top: 10%;
+  border-radius: 10rpx;
+  background-color: rgb(245, 245, 245);
+  border: 1rpx solid rgb(228, 228, 228);
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: rgb(124, 124, 124);
+}
+.createstores{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  z-index: 1001;
+  border-radius: 50%;
+  background-color: #6495ED;
+  color: white;
+  font-size: 55rpx;
+  font-weight: 700;
+  text-align: center;
+  line-height: 75rpx;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+.contentitembox{
+  position: fixed;
+  width: 100%;
+  top: 80rpx;
+  height: calc(100% - 80rpx);
+  position: relative;
+}
+.contentitembox .item_1{
+  width: 100%;
+  height: 200rpx;
+  background-color: white;
+  border-bottom: 1rpx solid rgb(218, 218, 218);
+  position: relative;
+}
+.contentitembox .item_2{
+  width: 100%;
+  height: 200rpx;
+  background-color: white;
+  border-bottom: 1rpx solid rgb(218, 218, 218);
+  position: relative;
+}
+.contentitembox .item_1 .name,.contentitembox .item_2 .name{
+  position: absolute;
+  font-weight: 700;
+  font-size: 40rpx;
+  top: 10rpx;
+  left: 150rpx;
+  color: rgb(94, 94, 94);
+  display: block;
+  width: 60%;
+  height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contentitembox .item_1 image,.contentitembox .item_2 image{
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  height: 130rpx;
+  width: 130rpx;
+}
+.contentitembox .item_1 .delete,.contentitembox .item_2 .delete{
+  position: absolute;
+  top: 90rpx;
+  right: 10rpx;
+  width: 80rpx;
+  height: 30rpx;
+  background-color: rgb(165, 165, 165);
+  padding: 10rpx;
+  color: white;
+  line-height: 30rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+.contentitembox .item_1  .type,.contentitembox .item_2 .type{
+  position: absolute;
+  width: auto;
+  height: auto;
+  font-size: 30rpx;
+  background-color: tomato;
+  padding: 5rpx;
+  border-radius: 10rpx;
+  color: white;
+  top: 10rpx;
+  right: 10rpx;
+}
+.contentitembox .item_1 .price,.contentitembox .item_2 .price{
+  position: absolute;
+  width: auto;
+  height: auto;
+  font-size: 35rpx;
+  border-radius: 5rpx;
+  color: rgb(134, 26, 26);
+  font-weight: 600;
+  top: 90rpx;
+  left: 150rpx;
+}
+.contentitembox .item_1 .totalbox,.contentitembox .item_2 .totalbox{
+  position: absolute;
+  top: 85rpx;
+  right: 140rpx;
+  width: auto;
+  height: auto;
+  padding: 10rpx;
+}
+.contentitembox .item_1 .detailinfo,.contentitembox .item_2 .detailinfo{
+  width: 100%;
+  height: 40rpx;
+  top: 150rpx;
+  left: 0;
+  position: absolute;
+}
+.contentitembox .item_1 .detailinfo text,.contentitembox .item_2 .detailinfo text{
+  margin-left: 20rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  color: rgb(131, 131, 131);
+  display: inline-block;
+}
+.contentitembox .item_1 .totalbox .add,.contentitembox .item_2 .totalbox .add{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #6495ED;
+  text-align: center;
+  line-height: 40rpx;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: inline-block;
+  float: left;
+  margin-right: 10rpx;
+}
+.contentitembox .item_1 .totalbox .sub,.contentitembox .item_2 .totalbox .sub{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #b1b1b1;
+  text-align: center;
+  line-height: 40rpx;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: inline-block;
+  float: right;
+  margin-left: 10rpx;
+}
+.optionbox{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1010;
+}
+.optionbox .checkbox{
+  width: 320rpx;
+  height: auto;
+  background-color: white;
+  border-radius: 10rpx;
+  position: relative;
+  top: 20%;
+  margin:0 auto;
+  overflow-y: scroll;
+  z-index: 1001;
+}
+.optionbox .checkbox .cansole{
+  width: 120rpx;
+  height: 50rpx;
+  margin: 20rpx;
+  background-color: tomato;
+  display: inline-block;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: white;
+}
+.optionbox .checkbox .check{
+  width: 120rpx;
+  height: 50rpx;
+  margin: 20rpx;
+  background-color: #6495ED;
+  display: inline-block;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: white;
+}
+.optionbox .option{
+  width: 80%;
+  height: auto;
+  background-color: white;
+  border-radius: 10rpx;
+  position: relative;
+  top: 20%;
+  margin:0 auto;
+  overflow-y: scroll;
+  z-index: 1001;
+}
+.optionbox .option .optionitem{
+  display: inline-block;
+  border-radius: 10rpx;
+  border: 1rpx solid rgb(233, 233, 233);
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  width: 100rpx;
+  color: rgb(114, 114, 114);
+  margin: 20rpx;
+}
+.optionbox .option .inuptbox{
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+.optionbox .option .inuptbox .submit{
+  width: 120rpx;
+  position: absolute;
+  right: -20rpx;
+  height: 60rpx;
+  border-radius: 30px;
+  background-color: #6495ED;
+  color: white;
+  bottom: 0;
+  z-index: 1003;
+  text-align: center;
+}
+.optionbox .option .inuptbox .inputer{
+  height: 60rpx;
+  margin: 20rpx;
+  line-height: 60rpx;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 30rpx;
+  width: 100%;
+  border: 1rpx solid rgb(238, 238, 238);
+  left: 0;
+  position: relative;
+}
+.selectbg{
+  background-color: #6495ED;
+  color: white;
+}
+.optionbox .option .inuptbox .typecontentitembox{
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 20rpx;
+}
+.optionbox .option .inuptbox .contentitembox{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+}
+.optionbox .option .inuptbox .contentitembox .arrname{
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  font-size: 30rpx;
+  color: rgb(145, 145, 145);
+  margin-bottom: 20rpx;
+}
+.optionbox .option .inuptbox .contentitembox .arritem{
+  width: auto;
+  padding: 10rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: rgb(88, 88, 88);
+  height: 40rpx;
+  text-align: center;
+  border: 1rpx solid rgb(226, 226, 226);
+  border-radius: 10rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.optionbtm{
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+}
+.shownowtypetotal{
+  width: 100%;
+  height: 40rpx;
+  position: relative;
+  text-align: left;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: rgb(116, 116, 116);
+  display: block;
+  margin-top: 20rpx;
+}
+.lodingboxer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 1111;
+}

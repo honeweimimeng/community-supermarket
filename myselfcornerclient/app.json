@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/PayGoods/PayGoods",
+    "pages/Myself/Myself",
+    "pages/common/commonpage/loding_remax/loding_remax",
+    "pages/StoresCar/StoresCar",
+    "pages/BusinessPage/BusinessPage",
+    "pages/StoresDetail/StoresDetails",
+    "pages/PayMoney/PayMoney",
+    "pages/SearchResult/SearchResult"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6495ED",
+    "navigationBarTitleText": "轻云只尚-V1.0.1Beta",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#6495ED",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/PayGoods/PayGoods",
+        "text": "购物",
+        "iconPath": "./pages/images/PayGoodsicon.png",
+        "selectedIconPath": "./pages/images/PayGoodsiconSe.png"
+      },
+      {
+        "pagePath": "pages/StoresCar/StoresCar",
+        "text": "购物车",
+        "iconPath": "./pages/images/StoresCar.png",
+        "selectedIconPath": "./pages/images/StoresCarSe.png"
+      },
+      {
+        "pagePath": "pages/Myself/Myself",
+        "text": "我的",
+        "iconPath": "./pages/images/Myselficon.png",
+        "selectedIconPath": "./pages/images/MyselficonSe.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您的社区位置"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

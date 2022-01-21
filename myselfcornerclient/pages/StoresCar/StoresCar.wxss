@@ -1,0 +1,169 @@
+page{
+  width: 100%;
+  height: 100%;
+  background: rgb(245, 245, 245);
+}
+.storesitembox{
+  width: 95%;
+  height: auto;
+  position: relative;
+  left: 2.5%;
+  margin: 20rpx 0;
+  border-radius: 15rpx;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.storesitembox .item{
+  width: 100%;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  border: 1rpx solid rgb(237, 237, 237);
+  padding-bottom: 20rpx;
+  border-radius: 5rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background: white;
+}
+.storesitembox .item .imagebox{
+  width: 150rpx;
+  display: block;
+  height: 150rpx;
+  overflow: hidden;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  position: relative;
+}
+.storesitembox .item .imagebox image{
+  max-width: 80%;  
+  max-height: 80%;
+  margin: 10% auto 0 auto;
+  display: block;
+}
+.storesitembox .item .name{
+  font-size: 35rpx;
+  color: rgb(87, 87, 87);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 60%;
+  margin: 0 auto;
+  font-weight: 700;
+  position: absolute;
+  top: 10rpx;
+  left: 160rpx;
+}
+.storesitembox .item .pricebox{
+  width: 95%;
+  margin: 0 auto;
+  height: 60rpx;
+  position: absolute;
+  top: 65rpx;
+  left: 160rpx;
+}
+.storesitembox .item .pricebox .price{
+  font-size: 40rpx;
+  color: tomato;
+}
+.storesitembox .item .pricebox .salesnum{
+  font-size: 30rpx;
+  color: rgb(163, 163, 163);
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.storesitembox .item .btype{
+  padding: 2rpx;
+  height: auto;
+  background-color:  tomato;
+  font-size: 25rpx;
+  padding: 5rpx;
+  color: white;
+  margin-left: 5%;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 120rpx;
+  left: 130rpx;
+}
+.totalbox{
+  position: absolute;
+  top: 120rpx;
+  left: 300rpx;
+  width: auto;
+  height: auto;
+  padding: 10rpx;
+}
+.totalbox .add{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #6495ED;
+  text-align: center;
+  line-height: 40rpx;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: inline-block;
+  float: left;
+  margin-right: 10rpx;
+}
+.totalbox .sub{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #b1b1b1;
+  text-align: center;
+  line-height: 40rpx;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: inline-block;
+  float: right;
+  margin-left: 10rpx;
+}
+.selbox{
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 50%;
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 35rpx;
+  color: white;
+}
+.seledbox{
+  background: #6495ED;
+}
+.btmbar{
+  width: 100%;
+  height: 80rpx;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border: 1rpx solid rgb(237, 237, 237);
+}
+.btmbar .topay{
+  width: 200rpx;
+  height: 60rpx;
+  border-radius: 30px;
+  background: #6495ED;
+  color: white;
+  font-size: 35rpx;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+.btmbar text{
+  position: absolute;
+  left: 20rpx;
+  font-size: 35rpx;
+  top: 20rpx;
+  color: rgb(71, 71, 71);
+  color: tomato;
+}

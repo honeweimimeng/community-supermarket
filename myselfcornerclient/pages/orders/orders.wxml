@@ -1,0 +1,56 @@
+<view class="tapNav">
+ <view class="{{contentindex==0?'active':''}}" data-index="0" bindtap="ClickHandle">待付款</view>
+ <view class="{{contentindex==1?'active':''}}" data-index="1" bindtap="ClickHandle">待发货</view>
+ <view class="{{contentindex==2?'active':''}}" data-index="2" bindtap="ClickHandle">待收货</view>
+ <view class="{{contentindex==3?'active':''}}" data-index="3" bindtap="ClickHandle">已完成</view>
+ <view class="{{contentindex==4?'active':''}}" data-index="4" bindtap="ClickHandle">全部订单</view>
+</view>
+<view class="content">
+<swiper id="swiper" current="{{contentindex}}" bindchange="swiperChange">
+  <block wx:for="{{looparr}}" wx:key="*this">
+    <swiper-item>
+      <scroll-view scroll-y class="contentitembox" bindscrolltolower="nextpage">
+        <view wx:for="{{orderarr}}" wx:key="index" class="{{index%2==0 ? 'item_1' : 'item_2'}}">
+          <image src="{{item.imgurl}}"></image>
+          <text class="name">{{item.page}}</text>
+          <text class="show_price">￥{{filters.toFix(item.finalpaymoney)}}</text>
+          <text class="price {{item.finalpaymoney ==null ? '':'textline'}}">￥{{filters.toFix(item.showpaymoney)}}</text>
+          <text class="adress">{{item.aimadress}}</text>
+          <text class="price" style="left:450rpx">购买数量{{item.storesnum}}</text>
+          <view class="checkurl" wx:if="{{item.status=='2'}}" data-oid="{{item.oid}}" data-idx="{{index}}" bindtap="checkurl">确认收货</view>
+          <view class="checkurl" wx:if="{{item.status=='3'}}" data-oid="{{item.oid}}" data-idx="{{index}}" bindtap="totalks">去评价</view>
+          <view class="checkurl" wx:if="{{item.status=='1'}}" data-oid="{{item.oid}}" data-idx="{{index}}">待发货</view>
+          <view class="checkurl" wx:if="{{item.status=='4'}}" data-oid="{{item.oid}}" data-idx="{{index}}">已完成</view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view class="talksshow" wx:if="{{talksshow}}">
+  <view class="header">
+    <image src="../images/back.png" bindtap="backup"></image>
+    <text>评价商品/服务</text>
+    <view bindtap="sendtalks">发布</view>
+  </view>
+  <view class="talkstypebox">
+    <view data-status="true" class="{{talksstatus == 'true'?'sel':''}}" bindtap="changestatus">好评</view>
+    <view data-status="false" class="{{talksstatus == 'false'?'sel':''}}" bindtap="changestatus">差评</view>
+  </view>
+  <view class="bodyer">
+    <textarea class="contentbox" value="写下你的评论~" bindinput="contentinput"></textarea>
+  </view>
+  <view class="iteamer" wx:if="{{!uploaded}}" bindtap="chooseimg" data-idx="0">
+    <text>上传评论照片(最多5张)</text>
+    <view class="uploadimgaebox">
+      <image src="{{licenseurl}}"></image>
+    </view>
+  </view>
+  <view class="iteamer" wx:if="{{uploaded}}">
+    <text>上传成功</text>
+    <view class="uploadimgaebox">
+      <image src="../Myself/images/checking.png"></image>
+    </view>
+  </view>
+</view>
+<wxs module="filters" src="./order.wxs"></wxs>

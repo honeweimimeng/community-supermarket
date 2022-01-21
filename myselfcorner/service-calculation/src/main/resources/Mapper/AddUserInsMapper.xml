@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicecalculation.dao.AddUserInsMapper">
+    <insert id="CreateUserIns" parameterType="string">
+        insert into userinterest values(#{uid},#{keyword}#{se_keyword},#{simuserarr});
+    </insert>
+    <update id="AlterUserIns" parameterType="string">
+        update userinterest set keyword=#{keyword},se_keyword=#{se_keyword},simuserarr=#{simuserarr};
+    </update>
+</mapper>

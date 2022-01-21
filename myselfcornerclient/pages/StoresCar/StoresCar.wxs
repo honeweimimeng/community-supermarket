@@ -1,0 +1,10 @@
+function indexOf(a, id) {
+  a=JSON.stringify(a);
+  id=JSON.stringify(id);
+  if (a.indexOf(id) < 0) {
+      return false;
+  } else {
+      return true;
+  }
+}
+module.exports.indexOf = indexOf;

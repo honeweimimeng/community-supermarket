@@ -1,0 +1,53 @@
+<view class="createstores" bindtap="createstores">＋</view>
+<view class="searchbox">
+  <view class="inputbox">
+    <input placeholder="输入名称关键字" bindinput="searchcontent"></input>
+    <view bindtap="tosaearch">搜索</view>
+  </view>
+  <view wx:if="{{up==1}}" class="sortopbox" bindtap="orderbyoption">☑ 升序</view>
+  <view wx:if="{{down==1}}" class="sortopbox" bindtap="orderbyoption">☑ 降序</view>
+  <view class="filedopbox" bindtap="filedoption">☑ {{columnameshow}}</view>
+</view>
+<scroll-view scroll-y class="contentitembox" bindscrolltolower="nextpage">
+  <view wx:for="{{storesarr}}" wx:key="index" class="{{index%2==0 ? 'item_1' : 'item_2'}}">
+    <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+    <text class="name">{{item.name}}</text>
+    <text class="type">{{item.btype}}</text>
+    <text class="price">￥{{item.price}}</text>
+    <view class="delete" bindtap="deletestores" data-sid="{{item.sid}}">下架</view>
+    <view class="detailinfo">
+    <text>销量:{{item.salesnum}}</text>
+    <text>库存量:{{item.totalscore}}</text>
+    <text>好评:{{item.praisetalks}}</text>
+    <text>差评:{{item.badtalks}}</text>
+    </view>
+    <view class="totalbox">
+      <view class="add" data-sid="{{item.sid}}" data-idx="{{index}}" bindtap="addtotal">＋</view>
+      <view class="sub" data-sid="{{item.sid}}" data-idx="{{index}}" bindtap="subtotal">-</view>
+    </view>
+  </view>
+</scroll-view>
+<view class="optionbox" wx:if="{{optionshow}}">
+  <view class="optionbtm" bindtap="closeoption"></view>
+  <view wx:if="{{!checkbox}}" class="option">
+    <view wx:if="{{optiontype==0}}" class="optionitem" wx:for="{{optionarr}}" bindtap="selectopitem" data-inner="{{item}}">{{item}}</view>
+    <view wx:if="{{optiontype==1}}" class="inuptbox">
+      <view wx:for="{{storesarr}}" wx:if="{{index==nowselectstoresarrindex}}" class="typecontentitembox">
+        <view class="contentitembox" wx:for="{{item.itemizearr}}" wx:for-index="indexs">
+          <text class="arrname">{{item.name}}</text>
+          <view wx:for="{{item.content}}" class="arritem {{item.name!=contentarr[indexs] ? '':'selectbg'}}" data-content="{{item.name}}" data-idx="{{indexs}}" bindtap="alter_contentselect">{{item.name}}</view>
+        </view> 
+      </view>
+      <text class="shownowtypetotal">当前分类库存:{{nowtypecontenttotal}}</text>
+      <input placeholder="库存增减数目" bindinput="changetotal" class="inputer"></input>
+      <view class="submit" bindtap="sendaltertotal">确认</view>
+    </view>
+  </view>
+  <view class="checkbox" wx:if="{{checkbox}}">
+    <view class="check" bindtap="check">确认</view>
+    <view class="cansole" bindtap="cansole">取消</view>
+  </view>
+</view>
+<view class="lodingboxer" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>

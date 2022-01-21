@@ -1,0 +1,20 @@
+<view class="nothaveorder" wx:if="{{!haveorder}}">
+  <image src="../images/nothavemsg.png"></image>
+  <text>暂无订单哦</text>
+</view>
+<scroll-view scroll-y class="contentitembox" wx:if="{{haveorder}}">
+  <view wx:for="{{orderarr}}" wx:key="index" class="{{index%2==0 ? 'item_1' : 'item_2'}}">
+    <image src="{{item.ImgUrl}}"></image>
+    <text class="name">{{item.Name}}</text>
+    <text class="price">￥{{item.Price}}</text>
+    <text class="adress">{{item.Adress}}</text>
+    <text class="price" style="left:450rpx">购买数量{{item.StoresNum}}</text>
+    <view class="checkurl" data-oid="{{item.Oid}}" data-idx="{{index}}" bindtap="checkurl">发货</view>
+  </view>
+</scroll-view>
+<view class="videobox" bindtap="video_ctrbtn" wx:if="{{!video_ctrbtnstatus}}">
+  <view class="ctrbtn">关</view>
+</view>
+<view class="videobox" bindtap="video_ctrbtn" style="background-color: rgb(143, 230, 109);" wx:if="{{video_ctrbtnstatus}}">
+  <view class="ctrbtn" style="float:right">开</view>
+</view>

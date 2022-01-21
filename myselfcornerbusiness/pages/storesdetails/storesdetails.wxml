@@ -1,0 +1,43 @@
+<image src="../images/addstoresicon.png" class="topbg"></image>
+<view class="contentbox">
+  <input placeholder="商品名" bindinput="nameinput"></input>
+  <view class="iteamer" style="border:none">
+    <view class="typebox" bindtap="selecttype">{{typeselect}}</view>
+  </view>
+  <input placeholder="商品售价(元)" bindinput="priceinput"></input>
+  <view class="adderbox">
+    <view class="adder" bindtap="addtypearr">
+      <image src="../images/addericon.png"></image>
+      <text>添加商品子分类族</text>
+    </view>
+    <view class="iteamer" wx:for="{{typearr}}" wx:for-index="index">
+      <input placeholder="子分类族名称" data-index="{{index}}" bindinput="typearrname"></input>
+      <view class="addsoniteamer" bindtap="addsontypearr" data-index="{{index}}">添加子分类</view>
+      <view class="iteamer" style="width:80%;margin:10rpx auto" wx:for="{{typearr[index].content}}" wx:for-index="id" data-index="index" data-idx="0">
+        <input placeholder="设置子分类名称" data-sonindex="{{id}}" data-index="{{index}}" bindinput="sontypearrname"></input>
+        <view class="uploadimgaebox" data-sonindex="{{id}}" data-index="{{index}}" bindtap="chooseimg">
+          <image src="{{typearr[index].content[id].imgurl}}"></image>
+        </view>
+      </view> 
+    </view>
+  </view>
+  <view class="adderbox">
+    <view class="adder" bindtap="adddetailarr">
+      <image src="../images/addericon.png"></image>
+      <text>添加商品详情</text>
+    </view>
+    <view class="iteamer" wx:for="{{storedetailinfoarr}}" wx:for-index="index">
+      <input placeholder="详情名称" data-index="{{index}}" bindinput="storedetailsinfoarrkey"></input>
+      <input placeholder="详情内容" data-index="{{index}}" bindinput="storedetailinfoarrvalue"></input>
+    </view>
+  </view>
+  <view class="Submit" bindtap="sendcreatestore">确认增加商品</view>
+</view>
+<view class="optionbox" wx:if="{{optionselect}}">
+  <view class="optioncontr">
+  <view class="option">
+    <view wx:for="{{storestypearr}}" class="optionitem" data-idx="{{index}}" bindtap="itemclick">{{item}}</view>
+  </view>
+  <view class="quite" bindtap="quiteoptionsel">暂时不选择了~</view>
+  </view>
+</view>

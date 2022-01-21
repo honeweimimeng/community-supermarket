@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceuser.dao.GetUserInfoMapper">
+    <select id="GetSingleBusinessInfo" parameterType="string" resultType="com.hone.serviceuser.model.BusinessInfo">
+        select * from businessinfo where hostid=#{hostid};
+    </select>
+    <select id="GetWaiteCheckBusinessInfo" parameterType="string" resultType="com.hone.serviceuser.model.BusinessInfo">
+        select * from applybusiness where uid=#{hostid};
+    </select>
+    <select id="GetAdminUserInfo" parameterType="string" resultType="com.hone.serviceuser.model.UserBaseInfo">
+        select * from adminuser where uid=#{uid};
+    </select>
+    <select id="GetApplyBusinessArr" parameterType="string" resultType="com.hone.serviceuser.model.ApplyBusinessInfo">
+        select * from applybusiness limit ${start},${end};
+    </select>
+    <select id="GetApplyBusinessCount" parameterType="string" resultType="string">
+        select count(id) from applybusiness;
+    </select>
+    <select id="GetBusinessInfo" parameterType="string" resultType="com.hone.serviceuser.model.BusinessInfo">
+        select * from businessinfo bi join businessdetails bd on bi.bid=bd.bid where bi.bid=${bid};
+    </select>
+    <select id="GetCustomerBaseInfo" parameterType="string" resultType="com.hone.serviceuser.model.UserBaseInfo">
+        select * from userbaseinfo where uid=#{uid};
+    </select>
+    <select id="Getuserbrowse" parameterType="string" resultType="com.hone.localcommons.Model.UserBrowse">
+        select * from userbrowse where uid=#{uid} and sid=${sid};
+    </select>
+</mapper>

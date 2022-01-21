@@ -1,0 +1,31 @@
+<view class="contentbox">
+  <view class="businessbox" bindtap="jum_business">
+  <image src="{{businessjson.iconurl}}"></image>
+  <text class="name">{{businessjson.bname}}</text>
+  <text class="lab">“{{businessjson.blab}}”</text>
+  <text class="type">{{businessjson.btype}}</text>
+  <text class="praisetalks">综合好评{{businessjson.praisetalks}}</text>
+  <text class="badtalks" style="left: 500rpx;">综合差评{{businessjson.badtalks}}</text>
+  </view>
+  <view class="topnav">
+    <view class="navitem {{reqtype==0 ? 'sel':''}}" data-idx="0" bindtap="jum_type">只看有货</view>
+    <view class="navitem {{reqtype==1 ? 'sel':''}}" data-idx="1" bindtap="jum_type">店铺上新</view>
+    <view class="navitem {{reqtype==2 ? 'sel':''}}" data-idx="2" bindtap="jum_type">价格</view>
+    <view class="navitem {{reqtype==3 ? 'sel':''}}" data-idx="3" bindtap="jum_type">销量</view>
+  </view>
+</view>
+<scroll-view scroll-y class="storesbox">
+  <view class="storesitembox">
+  <view wx:for="{{storesarr}}" data-idx="{{item.sid}}" bindtap="jum_stores" class="item {{index%2==0 ? 'left' : 'right'}}" >
+    <view class="imagebox">
+    <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+    </view>
+    <text class="name">{{item.name}}</text>
+    <view class="pricebox">
+      <text class="price">￥{{item.price}}</text>
+      <text class="salesnum">{{item.salesnum}}人付款</text>
+    </view>
+    <text class="btype">{{item.btype}}</text>
+  </view>
+</view>
+</scroll-view>

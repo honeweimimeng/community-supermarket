@@ -1,0 +1,193 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.tips{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.tips image{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.tips text{
+  display: block;
+  width: 100%;
+  font-size: 45rpx;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  height: 250rpx;
+  line-height: 250rpx;
+}
+.tips view{
+  margin: 0 auto;
+  height: 60rpx;
+  width: 250rpx;
+  border-radius: 30px;
+  background-color: rgb(53, 199, 109);
+  color: white;
+  text-align: center;
+  line-height: 60rpx;
+  position: relative;
+  top: 250rpx;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+}
+.content .imagebox{
+  width: 100%;
+  position: relative;
+  top: -70rpx;
+  height: 300rpx;
+}
+.content .imagebox image{
+  display: block;
+  margin: 0 auto;
+}
+.content .iteamer{
+  width: 80%;
+  height: 100rpx;
+  margin: 60rpx 10%;
+  position: relative;
+}
+.content .iteamer .uploadimgaebox{
+  width: 100%;
+  height: 200rpx;
+  border: 1rpx dotted rgb(194, 194, 194);
+  margin-bottom: 20rpx;
+}
+.content .iteamer .uploadimgaebox image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 25rpx;
+}
+.content .iteamer text{
+  position: relative;
+  display: inline-block;
+  height: 35%;
+  width: auto;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  color: rgb(99, 99, 99);
+  left: 2%;
+}
+.content .iteamer input{
+  width: 100%;
+  margin: 0 auto;
+  height: 60%;
+  left: 0;
+  border-radius: 30px;
+  text-align: center;
+  border: 1rpx solid rgb(180, 180, 180);
+  position: relative;
+  top: 10rpx;
+  font-size: 30rpx;
+}
+.content .iteamer .areabox{
+  width: 100%;
+  margin: 0 auto;
+  height: 60%;
+  left: 0;
+  position: relative;
+  top: 10rpx;
+}
+.content .iteamer .areabox .areaitem{
+  width: 28%;
+  margin: 20rpx 10rpx;
+  height: 60rpx;
+  display: inline-block;
+  border: 1rpx solid rgb(241, 241, 241);
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: rgb(99, 99, 99);
+}
+.content .iteamer .typebox{
+  width: 100%;
+  margin: 0 auto;
+  height: 60%;
+  left: 0;
+  position: relative;
+  top: 10rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgb(231, 231, 231);
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(116, 116, 116);
+  line-height: 60rpx;
+}
+.content .iteamer .sendtoserver{
+  width: 80%;
+  height: 70%;
+  background-color: #6495ED;
+  border-radius: 30px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 70rpx;
+  color: white;
+}
+.optionbox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  background-color: rgba(0,0,0,0.6);
+  transition: 0.5s;
+}
+.optionbox .optioncontr{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+  background-color: white;
+  border-radius: 15rpx;
+  height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.optionbox .optioncontr .option{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  background-color: white;
+  height: 85%;
+  overflow-y: scroll;
+}
+.optionbox .optioncontr .quite{
+  width: 90%;
+  height: 10%;
+  background-color: #6495ED;
+  text-align: center;
+  border-radius: 30px;
+  color: white;
+  position: relative;
+  left: 5%;
+  top: 3%;
+  font-size: 35rpx;
+}
+.optionbox .optioncontr .option .optionitem{
+  width: 28%;
+  margin: 20rpx 2%;
+  border: 1rpx solid rgb(214, 214, 214);
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  color: rgb(116, 116, 116);
+  overflow: hidden;
+}

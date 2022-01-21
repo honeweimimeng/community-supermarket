@@ -1,0 +1,60 @@
+<view class="tips" wx:if="{{!is_authentication}}">
+  <text>{{loadtips}}</text>
+  <view bindtap="authentication" wx:if="{{!sendedcreatereq}}">点我认证</view>
+  <image src="./images/tipsbg.png"></image>
+</view>
+<view class="content" wx:if="{{is_authentication}}">
+  <view class="imagebox">
+    <image src="../images/createbgicon.png"></image>
+  </view>
+  <view class="iteamer">
+    <text>店铺名称</text>
+    <input bindinput="nameinput"></input>
+  </view>
+  <view class="iteamer">
+    <text>联系电话</text>
+    <input bindinput="phonenumberinput"></input>
+  </view>
+  <view class="iteamer">
+    <text>店铺标签说明</text>
+    <input bindinput="blabinput"></input>
+  </view>
+  <view class="iteamer">
+    <text>选择地区</text>
+    <view class="typebox" bindtap="selectarea">{{areaselect}}</view>
+  </view>
+  <view class="iteamer">
+    <text>选择店铺主营品类</text>
+    <view class="typebox" bindtap="selecttype">{{typeselect}}</view>
+  </view>
+  <view class="iteamer" bindtap="chooseimg" data-idx="0">
+    <text>上传店铺营业执照</text> 
+    <view class="uploadimgaebox">
+      <image src="{{licenseurl}}"></image>
+    </view>
+  </view>
+  <view class="iteamer" bindtap="chooseimg" style="margin-top:180rpx" data-idx="1">
+    <text>上传店主身份证正面</text> 
+    <view class="uploadimgaebox">
+      <image src="{{idcardtopurl}}"></image>
+    </view>
+  </view>
+  <view class="iteamer" bindtap="chooseimg" style="margin-top:180rpx" data-idx="2">
+    <text>上传店主身份证反面</text> 
+    <view class="uploadimgaebox">
+      <image src="{{idcardbottomurl}}"></image>
+    </view>
+  </view>
+  <view class="iteamer" style="margin-top:220rpx">
+    <view class="sendtoserver" bindtap="sendtoserver">提交申请</view>
+  </view>
+</view>
+<view class="optionbox" wx:if="{{optionselect}}">
+  <view class="optioncontr">
+  <view class="option">
+    <view wx:if="{{nowseloption!=3}}" wx:for="{{optionarr}}" class="optionitem" data-idx="{{index}}" bindtap="itemclick">{{item.ssqname}}</view>
+    <view wx:if="{{nowseloption==3}}" wx:for="{{typearr}}" class="optionitem" data-idx="{{index}}" bindtap="itemclick">{{item}}</view>
+  </view>
+  <view class="quite" bindtap="quiteoptionsel">暂时不选择了~</view>
+  </view>
+</view>

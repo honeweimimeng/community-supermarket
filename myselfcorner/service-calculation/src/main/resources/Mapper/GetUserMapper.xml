@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicecalculation.dao.GetUserMapper">
+    <select id="GetUserStores" parameterType="string" resultType="com.hone.localcommons.Model.UserBrowse">
+        select * from userbrowse ub join userinterest ui on ub.uid=ui.uid where ui.city=#{city};
+    </select>
+    <select id="GetSingleUserIns" parameterType="string">
+        select * from userinterest where uid=#{uid};
+    </select>
+</mapper>

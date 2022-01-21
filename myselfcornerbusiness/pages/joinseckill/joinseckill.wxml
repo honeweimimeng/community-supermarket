@@ -1,0 +1,45 @@
+<view class="searchbox">
+  <view class="inputbox">
+    <input placeholder="输入名称关键字" bindinput="searchcontent"></input>
+    <view bindtap="tosaearch">搜索</view>
+  </view>
+</view>
+<scroll-view scroll-y class="contentitembox" bindscrolltolower="nextpage">
+  <view wx:for="{{storesarr}}" wx:key="index" class="{{index%2==0 ? 'item_1' : 'item_2'}}">
+    <image src="{{item.itemizearr[0].content[0].imgurl}}"></image>
+    <text class="name">{{item.name}}</text>
+    <text class="type">{{item.btype}}</text>
+    <text class="price">￥{{item.price}}</text>
+    <view class="select" wx:if="{{utils.inOf(joinstoresarr,item.sid)==-1}}" bindtap="selectstores" data-sid="{{item.sid}}"></view>
+    <view class="not_select" wx:if="{{utils.inOf(joinstoresarr,item.sid)!=-1}}">√</view>
+    <view class="detailinfo">
+    <text>销量:{{item.salesnum}}</text>
+    <text>库存量:{{item.totalscore}}</text>
+    <text>好评:{{item.praisetalks}}</text>
+    <text>差评:{{item.badtalks}}</text>
+    </view>
+  </view>
+</scroll-view>
+<view class="lodingboxer" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>
+<view class="optionbox" wx:if="{{isoption}}">
+  <view class="optionbg" bindtap="closeoption"></view>
+  <view class="optionitembox">
+    <text class="name">选择商品：{{nowoptionstores.name}}</text>
+    <text class="price">商品原价：￥{{nowoptionstores.price}}</text>
+    <view class="zhekoubox">
+      <input placeholder="输入1-9折扣额" bindinput="discount_input"></input>
+      <text>折后价：￥{{overprice}}</text>
+    </view>
+    <view class="zhuanchang">
+      <input placeholder="选择专场(整点数字)" bindinput="starttime_input"></input>
+      <text>{{nowtime}}-{{aftertime}}</text>
+    </view>
+    <view class="optioncheck" bindtap="optioncheck">确认报名</view>
+  </view>
+</view>
+<wxs module="utils">
+  var inOf=function(val,content){val=JSON.stringify(val);return val.indexOf(content)}
+  module.exports.inOf=inOf;
+</wxs>

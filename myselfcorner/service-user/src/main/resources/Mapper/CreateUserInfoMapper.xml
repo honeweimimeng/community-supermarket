@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.serviceuser.dao.CreateUserInfoMapper">
+    <insert id="CreateApplyBusiness" parameterType="string">
+        insert into applybusiness values(#{hostid},#{phonenumber},#{bname},#{btype},#{blab},#{address},#{longitude},#{latitude},
+        #{licenseurl},#{idcardtopurl},#{idcardbottomurl},0,#{iconurl});
+    </insert>
+    <insert id="CreateBusiness" parameterType="string">
+        insert into businessinfo values(${bid},#{hostid},#{phonenumber},#{bname},#{btype},#{blab},#{address},#{createdate},
+        #{longitude},#{latitude},0,#{iconurl});
+    </insert>
+    <insert id="CreateBusinessDetails" parameterType="string">
+        insert into businessdetails (bid) values(${bid});
+    </insert>
+    <insert id="CreateCustomerBaseInfo" parameterType="string">
+        insert into userbaseinfo values(#{uid},#{icon},#{name});
+    </insert>
+    <update id="UpdateCustomerBseInfo" parameterType="string">
+        update userbaseinfo set iconurl=#{icon},name=#{name} where uid=#{uid};
+    </update>
+    <insert id="CreateBrowse" parameterType="string">
+        insert into userbrowse values (#{uid},${sid},${browresult},${browlongtime},${clicknum});
+    </insert>
+</mapper>

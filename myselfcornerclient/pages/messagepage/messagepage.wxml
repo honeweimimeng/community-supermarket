@@ -1,0 +1,29 @@
+<view class="contentbox">
+  <view class="msgitem">
+    <image src="../images/businessicon.png"></image>
+    <text class="name">小程序官方</text>
+    <text class="date">2021年4月23日</text>
+    <text class="content">消息最后一条是什么呢真的是时代大厦多</text>
+  </view>
+  <view class="msgitem" wx:for="{{msgarr}}" data-aimuid="{{item.aimuid}}" data-name="{{item.bname}}" data-iconurl="{{item.iconurl}}" bindtap="jum_chat">
+    <image src="{{item.iconurl}}"></image>
+    <text class="name">{{item.bname}}</text>
+    <text class="date">{{item.date}}</text>
+    <text class="content">{{item.content}}</text>
+  </view>
+</view> 
+<view class="chatpage" wx:if="{{showchat}}">
+  <view class="btmbar">
+    <image src="../images/img.png"></image>
+    <input placeholder="说点什么~" bindinput="inputmsg"/>
+    <view bindtap="sendmsg" style="z-index:1003">发送消息</view>
+  </view>
+  <scroll-view scroll-y>
+    <view class="chatmsgitem" wx:for="{{chatlist}}">
+      <image src="{{item.iconurl}}" wx:if="{{item.utype==0}}" class="chatitem_imgleft"></image>
+      <image src="../images/Myselficon.png" wx:if="{{item.utype==1}}" class="chatitem_imgright"></image>
+      <text class="name" wx:if="{{item.utype==0}}">{{bname}}</text>
+      <text class="content {{item.utype==1 ? 'chatitem_contentright':'chatitem_contentleft'}}">{{item.content}}</text>
+    </view>
+  </scroll-view>
+</view>

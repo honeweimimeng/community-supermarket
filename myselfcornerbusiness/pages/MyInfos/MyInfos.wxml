@@ -1,0 +1,68 @@
+<view class="infobox" style="background:{{businessinfojson.iconurl}}">
+  <image class="bicon" src="{{businessinfojson.iconurl}}"></image>
+  <text class="bname">{{businessinfojson.bname}}</text>
+  <text class="blab">店铺标签：{{businessinfojson.blab}}</text>
+  <view class="detailbox">
+    <view class="detailitem">
+      <text><text style="display:block;color: #6495ED;">{{businessinfojson.salesnum}}</text>总销</text>
+    </view>
+    <view class="detailitem">
+      <text><text style="display:block;color: #6495ED;">{{businessinfojson.praisetalks}}</text>好评</text>
+    </view>
+    <view class="detailitem">
+      <text><text style="display:block;color: #6495ED;">{{businessinfojson.badtalks}}</text>差评</text>
+    </view>
+    <view class="detailitem">
+      <text style="display:block;color: #6495ED;">{{businessinfojson.btype}}</text>
+    </view>
+    <view class="detailitem">
+      <text><text style="display:block;color: #6495ED;">{{businessinfojson.totalscore}}</text>余量</text>
+    </view>
+  </view>
+  <text class="adress">{{businessinfojson.adress}}</text>
+</view>
+<view class="orderinfobox">
+  <view class="orderitemer" data-content="paying" bindtap="jum_torder">
+    <image src="./images/paying.png"></image>
+    <text>待付款</text>
+  </view>
+  <view class="orderitemer" data-content="sending" bindtap="jum_torder">
+    <image src="./images/sending.png"></image>
+    <text>待发货</text>
+  </view>
+  <view class="orderitemer" data-content="sended" bindtap="jum_torder">
+    <image src="./images/sended.png"></image>
+    <text>已发货</text>
+  </view>
+  <view class="orderitemer" data-content="checking" bindtap="jum_torder">
+    <image src="./images/checking.png"></image>
+    <text>已完成</text>
+  </view>
+  <view class="orderitemer" data-content="allorder" bindtap="jum_torder">
+    <image src="./images/allorder.png"></image>
+    <text>全部订单</text>
+  </view>
+</view>
+<view class="jum_seckill" bindtap="jum_joinseckill">
+  <text>参与秒杀活动</text>
+  <image src="../images/jum_right.png"></image>
+</view>
+<view class="ctrinline" bindtap="alter_bstatus" wx:if="{{businessinfojson.status=='1'}}">
+  <text>切换到休息状态~</text>
+  <image src="../images/bopen.png"></image>
+</view>
+<view class="ctrinline" bindtap="alter_bstatus" wx:if="{{businessinfojson.status=='0'}}">
+  <text>切换到营业状态~</text>
+  <image src="../images/bclose.png"></image>
+</view>
+<view class="ctrinline" bindtap="jum_joinromap">
+  <text>我要上钻石展位</text>
+  <image style="width:120rpx" src="../images/ROMap.png"></image>
+</view>
+<view class="ctrinline" bindtap="jum_messagepage">
+  <text>通知消息<text style="color:red">({{notreadmsgnum}})</text></text>
+  <image src="../images/messgae.png"></image>
+</view>
+<view class="lodingboxer" wx:if="{{isloding}}">
+  <include src="../common/commonpage/loding_remax/loding_remax.wxml"></include>
+</view>

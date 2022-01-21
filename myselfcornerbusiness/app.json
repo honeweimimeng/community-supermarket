@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/MyStores/MyStores",
+    "pages/MyInfos/MyInfos",
+    "pages/NewBusiness/NewBusiness",
+    "pages/storesdetails/storesdetails",
+    "pages/LisenOrder/LisenOrder",
+    "pages/orders/orders",
+    "pages/joinseckill/joinseckill",
+    "pages/messagepage/messagepage",
+    "pages/chatpage/chatpage",
+    "pages/JoinRoMap/JoinRoMap"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6495ED",
+    "navigationBarTitleText": "轻云只尚商家版-V1.0.1Beta",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#6495ED",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/MyStores/MyStores",
+        "text": "商品",
+        "iconPath": "./pages/images/PayGoodsicon.png",
+        "selectedIconPath": "./pages/images/PayGoodsiconSe.png"
+      },
+      {
+        "pagePath": "pages/LisenOrder/LisenOrder",
+        "text": "实时订单",
+        "iconPath": "./pages/images/LisenOrdericon.png",
+        "selectedIconPath": "./pages/images/LisenOrdericonSe.png"
+      },
+      {
+        "pagePath": "pages/MyInfos/MyInfos",
+        "text": "我的",
+        "iconPath": "./pages/images/Myselficon.png",
+        "selectedIconPath": "./pages/images/MyselficonSe.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您的社区位置"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

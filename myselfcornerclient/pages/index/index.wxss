@@ -1,0 +1,17 @@
+/**index.wxss**/
+@import '../common/commonpage/loding_remax/loding_remax.wxss';
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  margin: 20px 0;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

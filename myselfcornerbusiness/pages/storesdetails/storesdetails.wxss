@@ -1,0 +1,180 @@
+.topbg{
+  height: 450rpx;
+  display: block;
+  margin: -50rpx auto 0 auto;
+}
+.contentbox{
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: -100rpx;
+}
+.contentbox input{
+  width: 100%;
+  height: 80rpx;
+  margin: 20rpx 0;
+  border-radius: 30px;
+  border: 1rpx solid rgb(238, 238, 238);
+  text-align: center;
+  font-size: 35rpx;
+}
+.contentbox .adderbox{
+  width: 100%;
+  height: auto;
+  margin: 20rpx 0;
+  position: relative;
+  text-align: center;
+}
+.contentbox .adderbox .adder{
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid rgb(238, 238, 238);
+}
+.contentbox .adderbox .adder image{
+  height: 60rpx;
+  width: 60rpx;
+  margin: 10rpx 0;
+}
+.contentbox .adderbox .adder text{
+  font-size: 35rpx;
+  color: rgb(129, 129, 129);
+  position: relative;
+  top: -25rpx;
+  left: 15rpx;
+  display: inline-block;
+}
+.contentbox .iteamer{
+  width: 100%;
+  height: auto;
+  margin: 10rpx 0;
+  position: relative;
+  border: 1rpx dotted rgb(194, 194, 194);
+  padding: 10rpx 0;
+}
+.contentbox .iteamer .uploadimgaebox{
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.contentbox .iteamer .uploadimgaebox image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 25rpx;
+}
+.contentbox .iteamer text{
+  position: relative;
+  display: inline-block;
+  height: 35%;
+  width: auto;
+  font-size: 35rpx;
+  line-height: 100rpx;
+  color: rgb(99, 99, 99);
+  left: 2%;
+}
+.contentbox .iteamer input{
+  width: 90%;
+  height: 60rpx;
+  line-height: 60rpx;
+  left: 0;
+  border-radius: 30px;
+  text-align: center;
+  border: 1rpx solid rgb(238, 238, 238);
+  position: relative;
+  top: 0rpx;
+  font-size: 30rpx;
+  margin: 10rpx auto;
+}
+.contentbox .iteamer .addsoniteamer{
+  width: 80%;
+  height: 50rpx;
+  text-align: center;
+  font-size: 35rpx;
+  line-height: 50rpx;
+  background-color: #6495ED;
+  margin: 0 auto;
+  color: white;
+  border-radius: 10rpx;
+}
+.contentbox .Submit{
+  width: 100%;
+  height: 80rpx;
+  background-color: #6495ED;
+  border-radius: 15rpx;
+  text-align: center;
+  color: white;
+  font-size: 35rpx;
+  line-height: 80rpx;
+}
+.contentbox .iteamer .typebox{
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  left: 0;
+  position: relative;
+  top: 10rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgb(231, 231, 231);
+  text-align: center;
+  font-size: 30rpx;
+  color: rgb(116, 116, 116);
+  line-height: 60rpx;
+}
+.optionbox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  background-color: rgba(0,0,0,0.6);
+  transition: 0.5s;
+}
+.optionbox .optioncontr{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+  background-color: white;
+  border-radius: 15rpx;
+  height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.optionbox .optioncontr .option{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  background-color: white;
+  height: 85%;
+  overflow-y: scroll;
+}
+.optionbox .optioncontr .quite{
+  width: 90%;
+  height: 10%;
+  background-color: #6495ED;
+  text-align: center;
+  border-radius: 30px;
+  color: white;
+  position: relative;
+  left: 5%;
+  top: 3%;
+  font-size: 35rpx;
+}
+.optionbox .optioncontr .option .optionitem{
+  width: 28%;
+  margin: 20rpx 2%;
+  border: 1rpx solid rgb(214, 214, 214);
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  color: rgb(116, 116, 116);
+  overflow: hidden;
+}

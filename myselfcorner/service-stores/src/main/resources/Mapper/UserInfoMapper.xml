@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hone.servicestores.dao.UserInfoMapper">
+    <select id="GetInterestInfo" parameterType="string" resultType="com.hone.servicestores.model.UserInfo">
+        select * from userinterest where uid=#{uid};
+    </select>
+    <select id="GetKeyWord" parameterType="string" resultType="com.hone.servicestores.model.UserInfo">
+        select * from userinterest ui join userbrowse ub on ui.uid=ub.uid where keyword=#{keyword};
+    </select>
+    <select id="GetSe_KeyWord" parameterType="string" resultType="com.hone.servicestores.model.UserInfo">
+        select * from userinterest ui join userbrowse ub on ui.uid=ub.uid where se_keyword=#{keyword};
+    </select>
+    <select id="GetSingleUserIns" parameterType="string" resultType="com.hone.localcommons.Model.UserBrowse">
+        select * from userinterest where uid=#{uid};
+    </select>
+</mapper>
